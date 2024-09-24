@@ -1,43 +1,16 @@
 <ion-header [translucent]="true" >
   <ion-toolbar color="primary">
     <img class="logo" slot="end" src="assets/logo.png" alt="Logo" class="logo" />
-    <ion-title>Alumnos</ion-title>
+    <ion-title>Asignaturas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="primary">
   <ion-card-content>
-    <ion-list>
-      <ion-item>
-        <ion-label>
-          <h2>Juan Pérez</h2>
-          <p>Asistencia: 85%</p>
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>
-          <h2>María González</h2>
-          <p>Asistencia: 90%</p>
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>
-          <h2>Pedro López</h2>
-          <p>Asistencia: 95%</p>
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>
-          <h2>Ana Martínez</h2>
-          <p>Asistencia: 80%</p>
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>
-          <h2>Carlos Ramírez</h2>
-          <p>Asistencia: 92%</p>
-        </ion-label>
-      </ion-item>
-    </ion-list>
+    <ion-item color="primary" *ngFor="let item of men" [routerLink]="item.ruta">
+      <ion-icon slot="start" [name]="item.icono">
+      </ion-icon>
+      <ion-label>{{item.etiqueta}}</ion-label>
+    </ion-item>
   </ion-card-content>
 </ion-content>
