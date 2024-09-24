@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Formulario de registro DuocUC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="register()">
+    <ion-item>
+      <ion-input name="usuario" [(ngModel)]="reg.usuario" label="Nombre de Usuario" placeholder="Ingrese su usuario" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input name="contraseña" [(ngModel)]="reg.password" label="Contraseña" placeholder="Ingrese su contraseña" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input name="email" [(ngModel)]="reg.email" label="Email" placeholder="Ingrese su email" required></ion-input>
+    </ion-item>
+    <ion-button class="ion-padding" type="submit" color="secondary" expand="block" shape="round" >
+      Recuperar Contraseña
+    </ion-button>
+  </form>
+</ion-content>
