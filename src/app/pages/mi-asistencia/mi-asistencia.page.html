@@ -2,12 +2,68 @@
   <ion-toolbar>
     <ion-title>Mi porcentaje de Asistencia</ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-title><h6>INGENIERIA EN INFORMATICA</h6></ion-title>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">mi-Asistencia</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card-content class="center-content">
+    <ion-accordion-group>
+      <ion-accordion value="programacion">
+        <ion-item slot="header" color="light">
+          <ion-label>Programacion de Aplicaciones Moviles</ion-label>
+        </ion-item>
+        <ion-card slot="content">
+          <ion-card-content>
+            PGY4121: 80%
+          </ion-card-content>
+        </ion-card>
+      </ion-accordion>
+
+      <ion-accordion value="arquitectura">
+        <ion-item slot="header" color="light">
+          <ion-label>Arquitectura de Software</ion-label>
+        </ion-item>
+        <ion-card slot="content">
+          <ion-card-content>
+            ASY4131: 76.5%
+          </ion-card-content>
+        </ion-card>
+      </ion-accordion>
+
+      <ion-accordion value="calidad">
+        <ion-item slot="header" color="light">
+          <ion-label>Calidad de Software</ion-label>
+        </ion-item>
+        <ion-card slot="content">
+          <ion-card-content>
+            CSY4111: 78.9%
+          </ion-card-content>
+        </ion-card>
+      </ion-accordion>
+
+      <ion-accordion value="estadistica">
+        <ion-item slot="header" color="light">
+          <ion-label>Estadistica Descriptiva</ion-label>
+        </ion-item>
+        <ion-card slot="content">
+          <ion-card-content>
+            MAT4140: 85%
+          </ion-card-content>
+        </ion-card>
+      </ion-accordion>
+
+      <ion-accordion value="etica">
+        <ion-item slot="header" color="light">
+          <ion-label>Etica Profesional</ion-label>
+        </ion-item>
+        <ion-card slot="content">
+          <ion-card-content>
+            EAY4450: 75%
+          </ion-card-content>
+        </ion-card>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-card-content>
 </ion-content>

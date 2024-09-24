@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'scaneo',
     loadChildren: () => import('./pages/scaneo/scaneo.module').then( m => m.ScaneoPageModule)
   },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
 ];
 
 @NgModule({
