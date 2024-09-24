@@ -1,10 +1,11 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header [translucent]="true" >
+  <ion-toolbar color="primary">
+    <img class="logo" slot="end" src="assets/logo.png" alt="Logo" class="logo" />
     <ion-title>Asistencia</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="primary">
   <ion-list [inset]="true">
     <ion-item>
       <ion-label>Juan Pérez</ion-label>
@@ -30,15 +31,18 @@
 
   
   <ion-fab  slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button  id="open-modal">
+    <ion-fab-button color="secondary"   id="open-modal">
       <ion-icon name="qr-code-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
  
-  <ion-button (click)="presentAlert()" expand="block">
-    <ion-icon slot="start" name="save-outline"></ion-icon>
-    Guardar Asistencia
-  </ion-button>
+  <ion-card-content>
+    <ion-button color="secondary" (click)="presentAlert()" expand="block">
+      <ion-icon extend="block" name="save-outline"></ion-icon>
+      Guardar Asistencia
+    </ion-button>
+  </ion-card-content>
+ 
   
   <ion-alert
     id="alert-asistencia"
@@ -48,19 +52,19 @@
   ></ion-alert>
 
 
-  <ion-modal #modal trigger="open-modal" [canDismiss]="canDismiss" [presentingElement]="presentingElement">
+  <ion-modal  #modal trigger="open-modal" [canDismiss]="canDismiss" [presentingElement]="presentingElement">
     <ng-template>
       <ion-header>
-        <ion-toolbar>
+        <ion-toolbar color="secondary">
           <ion-title>Generar QR</ion-title>
           <ion-buttons slot="end">
             <ion-button (click)="modal.dismiss()">Cerrar</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding">
+      <ion-content color="primary" class="ion-padding">
         <ion-card class="qr-card">
-          <ion-icon name="qr-code-outline" class="qr-icon"></ion-icon>
+          <ion-icon color="secondary" name="qr-code-outline" class="qr-icon"></ion-icon>
         </ion-card>
       </ion-content>
     </ng-template>
