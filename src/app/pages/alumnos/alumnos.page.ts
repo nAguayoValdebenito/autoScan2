@@ -10,8 +10,13 @@ export class AlumnosPage implements OnInit {
 
   menuAlumno: Menu[]=[
     {
-      ruta:'/mi-asistencia',
+      ruta:'/perfil',
       icono:'person-circle-outline',
+      etiqueta:'Perfil Estudiante'
+    },
+    {
+      ruta:'/mi-asistencia',
+      icono:'desktop-outline',
       etiqueta:'Porcentaje de Asistencia'
     },
     {

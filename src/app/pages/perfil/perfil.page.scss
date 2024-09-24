@@ -1,0 +1,18 @@
+.card-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon-large {
+    font-size: 4rem; /* Aumenta el tamaño del ícono */
+    margin-right: 20px; /* Asegura espacio suficiente entre el ícono y el texto */
+  }
+  
+  .text-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .small-text {
+    font-size: 0.8rem; /* Ajusta el tamaño del texto */
+  }

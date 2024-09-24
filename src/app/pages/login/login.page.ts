@@ -21,13 +21,13 @@ export class LoginPage implements OnInit {
   }
 
   onSubmit(){
-    if(this.usuario.usr=="juanito@profesor.com" || this.usuario.password=="123456"){
-      this.alerta("Bienvenido","Profesor Juanito")
+    if(this.usuario.usr=="juan@profesor.cl" || this.usuario.password=="1234"){
+      this.alerta("Inicio de sesion","Bienvenido profesor Juan")
       this.router.navigateByUrl("/home")
 
     }
-    else if(this.usuario.usr=="nicolas@gmail.com" || this.usuario.password=="123"){
-      this.alerta("Bienvenido","Alumno Nicolas")
+    else if(this.usuario.usr=="nicolas@duoc.cl" || this.usuario.password=="123"){
+      this.alerta("Inicio de sesion","Bienvenido alumno Nicolas")
       this.router.navigateByUrl("/alumnos")
     }
     else{
@@ -39,7 +39,7 @@ export class LoginPage implements OnInit {
     const alert= await this.alrt.create ({
       header: encabezado,
       message: mensaje,
-      buttons: ['Ok']
+      buttons: ['Aceptar']
       
     })
     await alert.present()
