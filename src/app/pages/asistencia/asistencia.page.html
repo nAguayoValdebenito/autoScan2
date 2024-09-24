@@ -35,11 +35,17 @@
     </ion-fab-button>
   </ion-fab>
  
-  <ion-footer>
-    <ion-toolbar>
-      <ion-button expand="full" >Guardar Asistencia</ion-button>
-    </ion-toolbar>
-  </ion-footer>
+  <ion-button (click)="presentAlert()" expand="block">
+    <ion-icon slot="start" name="save-outline"></ion-icon>
+    Guardar Asistencia
+  </ion-button>
+  
+  <ion-alert
+    id="alert-asistencia"
+    header="Asistencia"
+    message="¿Estás seguro de guardar la asistencia?"
+    [buttons]="alertButtons"
+  ></ion-alert>
 
 
   <ion-modal #modal trigger="open-modal" [canDismiss]="canDismiss" [presentingElement]="presentingElement">
