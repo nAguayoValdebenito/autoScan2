@@ -46,6 +46,18 @@ const routes: Routes = [
     path: 'recuperar',
     loadChildren: () => import('./pages/recuperar/recuperar.module').then( m => m.RecuperarPageModule)
   },
+  {
+    path: 'arquitectura',
+    loadChildren: () => import('./pages/arquitectura/arquitectura.module').then( m => m.ArquitecturaPageModule)
+  },
+  {
+    path: 'calidad',
+    loadChildren: () => import('./pages/calidad/calidad.module').then( m => m.CalidadPageModule)
+  },
+  {
+    path: 'etica',
+    loadChildren: () => import('./pages/etica/etica.module').then( m => m.EticaPageModule)
+  },
 
 ];
 

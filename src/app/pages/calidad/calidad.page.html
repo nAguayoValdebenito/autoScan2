@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>calidad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-label>Juan Pérez</ion-label>
+      <ion-checkbox slot="start"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>María González</ion-label>
+      <ion-checkbox slot="start" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pedro López</ion-label>
+      <ion-checkbox slot="start" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ana Martínez</ion-label>
+      <ion-checkbox slot="start" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Carlos Ramírez</ion-label>
+      <ion-checkbox slot="start" ></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <ion-card-content>
+    <ion-button color="secondary" routerLink="/asistencia" expand="block"  shape="round">
+      Generar Qr
+    </ion-button>
+  </ion-card-content>
+</ion-content>

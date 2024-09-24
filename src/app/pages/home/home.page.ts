@@ -12,13 +12,9 @@ export class HomePage implements OnInit {
     {
       ruta:'/alumno-profesor',
       icono:'person-circle-outline',
-      etiqueta:'Alumnos'
+      etiqueta:'Asignaturas'
     },
-    {
-      ruta:'/asistencia',
-      icono:'list-circle-outline',
-      etiqueta:'Asistencia'
-    }
+   
   ]
 
   constructor() { }
