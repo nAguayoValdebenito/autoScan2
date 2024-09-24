@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-asistencia',
@@ -9,7 +11,25 @@ import { ActionSheetController } from '@ionic/angular';
 export class AsistenciaPage implements OnInit {
   presentingElement = undefined;
 
-  constructor(private actionSheetCtrl: ActionSheetController) { }
+  alertButtons = [
+    {
+      text: 'Guardar',
+      handler: () => {
+        this.navegar();
+        console.log('Asistencia guardada');
+      },
+    },
+    {
+      text: 'Cancelar',
+      role: 'cancel',
+      handler: () => {
+        console.log('Asistencia no guardada');
+      },
+    },
+
+  ];
+
+  constructor(private alrt: AlertController,private actionSheetCtrl: ActionSheetController, private router:Router) { }
 
   ngOnInit() {
 
@@ -17,7 +37,7 @@ export class AsistenciaPage implements OnInit {
 
   canDismiss = async () => {
     const actionSheet = await this.actionSheetCtrl.create({
-      header: 'Estas Seguro?',
+      header: 'Desea cerrar el QR?',
       buttons: [
         {
           text: 'Si',
@@ -37,4 +57,17 @@ export class AsistenciaPage implements OnInit {
     return role === 'confirm';
   };
 
+  async presentAlert() {
+    const alert = await this.alrt.create({
+      header: 'Asistencia',
+      message: '¿Estás seguro de guardar la asistencia?',
+      buttons: this.alertButtons,
+    });
+
+    await alert.present();
+  }
+
+  navegar() {
+    this.router.navigate(['/home']);
+  }
 }

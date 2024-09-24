@@ -1,13 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>alumnos</ion-title>
+    <ion-title>Vivo DuocUC Alumnos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">alumnos</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let item of menuAlumno" [routerLink]="item.ruta">
+        <ion-icon slot="start" [name]="item.icono">
+        </ion-icon>
+        <ion-label>{{item.etiqueta}}</ion-label>
+      </ion-item>
+  </ion-list>
+  </ion-card-content>
 </ion-content>
