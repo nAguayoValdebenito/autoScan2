@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Vivo DuocUC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let item of listaMenu" [routerLink]="item.ruta">
+        <ion-icon slot="start" [name]="item.icono">
+        </ion-icon>
+        <ion-label>{{item.etiqueta}}</ion-label>
+      </ion-item>
+  </ion-list>
+  </ion-card-content>
+</ion-content>

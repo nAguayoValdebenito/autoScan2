@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form  (ngSubmit)="onSubmit()">
+  <ion-card-content>
+    <ion-input required label="Usuario" label-placement="floating" fill="outline" placeholder="Ingrese Usuario" name="usr" [(ngModel)]="usuario.usr" ></ion-input>
+    <ion-input type="password" required label="Contraseña" name="password" label-placement="floating" fill="outline" placeholder="Ingrese Contraseña" name="password" [(ngModel)]="usuario.password"></ion-input>
+    <ion-button type="submit" expand="block">Ingresar</ion-button>
+  </ion-card-content>
+</form>
+
+</ion-content>
