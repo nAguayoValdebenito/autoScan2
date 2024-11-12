@@ -58,6 +58,10 @@ const routes: Routes = [
     path: 'etica',
     loadChildren: () => import('./pages/etica/etica.module').then( m => m.EticaPageModule)
   },
+  {
+    path: 'agregar-asignatura',
+    loadChildren: () => import('./pages/agregar-asignatura/agregar-asignatura.module').then( m => m.AgregarAsignaturaPageModule)
+  },
 
 ];
 
