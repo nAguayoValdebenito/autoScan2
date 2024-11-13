@@ -1,21 +1,23 @@
 <ion-header [translucent]="true" >
   <ion-toolbar color="primary">
     <img class="logo" slot="end" src="assets/logo.png" alt="Logo" class="logo" />
-    <ion-title>Asignaturas</ion-title>
+    <ion-title>QR Asistencia</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding ion-text-center" color="primary">
  
-<ion-segment [(ngModel)]="segment" mode="ios">
-  <ion-segment-button value="scan">
-    <ion-label>Scan QR</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="pasta">
-    <ion-label>Pasta</ion-label>
-  </ion-segment-button>
-</ion-segment>
+  <ion-list>
+    <ion-item *ngFor="let barcode of barcodes">
+      <ion-label position="stacked">{{ barcode.format }}</ion-label>
+      <ion-input type="text" [value]="barcode.rawValue"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="scan()" [disabled]="!isSupported">
+      <ion-icon name="scan"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
-{{segment}}
 
 </ion-content>
