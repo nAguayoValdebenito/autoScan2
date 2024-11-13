@@ -1,19 +1,18 @@
+// agregar-asignatura.page.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-
-import { AgregarAsignaturaPageRoutingModule } from './agregar-asignatura-routing.module';
-
 import { AgregarAsignaturaPage } from './agregar-asignatura.page';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
-    AgregarAsignaturaPageRoutingModule
+    RouterModule.forChild([{ path: '', component: AgregarAsignaturaPage }])
   ],
   declarations: [AgregarAsignaturaPage]
 })

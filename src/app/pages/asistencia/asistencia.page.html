@@ -5,69 +5,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="primary">
-  <ion-list [inset]="true">
-    <ion-item>
-      <ion-label>Juan Pérez</ion-label>
-      <ion-checkbox slot="start"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>María González</ion-label>
-      <ion-checkbox slot="start" ></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>Pedro López</ion-label>
-      <ion-checkbox slot="start" ></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>Ana Martínez</ion-label>
-      <ion-checkbox slot="start" ></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>Carlos Ramírez</ion-label>
-      <ion-checkbox slot="start" ></ion-checkbox>
-    </ion-item>
-  </ion-list>
-
-  
-  <ion-fab  slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button color="secondary"   id="open-modal">
-      <ion-icon name="qr-code-outline"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+<ion-content class="ion-padding ion-text-center" color="primary">
  
-  <ion-card-content>
-    <ion-button color="secondary" (click)="presentAlert()" expand="block">
-      <ion-icon extend="block" name="save-outline"></ion-icon>
-      Guardar Asistencia
-    </ion-button>
-  </ion-card-content>
- 
-  
-  <ion-alert
-    id="alert-asistencia"
-    header="Asistencia"
-    message="¿Estás seguro de guardar la asistencia?"
-    [buttons]="alertButtons"
-  ></ion-alert>
+<ion-segment [(ngModel)]="segment" mode="ios">
+  <ion-segment-button value="scan">
+    <ion-label>Scan QR</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="pasta">
+    <ion-label>Pasta</ion-label>
+  </ion-segment-button>
+</ion-segment>
 
-
-  <ion-modal  #modal trigger="open-modal" [canDismiss]="canDismiss" [presentingElement]="presentingElement">
-    <ng-template>
-      <ion-header>
-        <ion-toolbar color="secondary">
-          <ion-title>Generar QR</ion-title>
-          <ion-buttons slot="end">
-            <ion-button (click)="modal.dismiss()">Cerrar</ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content color="primary" class="ion-padding">
-        <ion-card class="qr-card">
-          <ion-icon color="secondary" name="qr-code-outline" class="qr-icon"></ion-icon>
-        </ion-card>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
+{{segment}}
 
 </ion-content>

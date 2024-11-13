@@ -1,4 +1,8 @@
 export interface Users {
-    usr:string,
-    password:string
+    id:string,
+    usuario:string,
+    password:string,
+    email:string
+    role:string,
+    departamento:string
 }
