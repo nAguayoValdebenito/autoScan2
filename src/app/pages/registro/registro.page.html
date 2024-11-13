@@ -4,19 +4,69 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form (ngSubmit)="register()">
-    <ion-item>
-      <ion-input name="usuario" [(ngModel)]="reg.usuario" label="Nombre de Usuario" placeholder="Ingrese su usuario" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input name="contraseña" [(ngModel)]="reg.password" label="Contraseña" placeholder="Ingrese su contraseña" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input name="email" [(ngModel)]="reg.email" label="Email" placeholder="Ingrese su email" required></ion-input>
-    </ion-item>
-    <ion-button class="ion-padding" type="submit" color="secondary" expand="block" shape="round" >
-      Recuperar Contraseña
-    </ion-button>
-  </form>
+<ion-content color="primary" class="ion-padding">
+  <ion-card-content class="register-card-content register-container">
+    <form (ngSubmit)="registrarUsuario()">
+      <img src="assets/logo.png" alt="Logo" class="logo" />
+
+      <!-- Selección de rol -->
+      <ion-item>
+        <ion-label>Rol</ion-label>
+        <ion-select placeholder="Seleccione su rol" [(ngModel)]="usr.role" name="role" (ionChange)="onRoleChange()">
+          <ion-select-option value="Alumno">Alumno</ion-select-option>
+          <ion-select-option value="Profesor">Profesor</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- Campos del formulario para Alumno y Profesor -->
+      <ion-card-content>
+        <ion-input 
+          required 
+          label="Nombre de usuario" 
+          label-placement="floating" 
+          fill="outline" 
+          placeholder="Ingrese su nombre de usuario" 
+          name="usuario" 
+          [(ngModel)]="usr.usuario">
+        </ion-input>
+
+        <ion-input 
+          required 
+          label="Email" 
+          label-placement="floating" 
+          fill="outline" 
+          placeholder="Ingrese su email" 
+          name="email" 
+          [(ngModel)]="usr.email">
+        </ion-input>
+
+        <ion-input 
+          type="password" 
+          required 
+          label="Contraseña" 
+          name="password" 
+          label-placement="floating" 
+          fill="outline" 
+          placeholder="Ingrese su contraseña" 
+          [(ngModel)]="usr.password">
+        </ion-input>
+
+        <!-- Campo de departamento (solo para Profesor) -->
+        <ion-input 
+          *ngIf="isProfesor" 
+          required 
+          label="Departamento" 
+          label-placement="floating" 
+          fill="outline" 
+          placeholder="Ingrese su departamento" 
+          name="departamento" 
+          [(ngModel)]="usr.departamento">
+        </ion-input>
+
+        <ion-button color="secondary" type="submit" expand="block">Registrarse</ion-button>
+      </ion-card-content>
+
+      <ion-button color="secondary" expand="full" fill="outline" routerLink="/login">Ya tengo una cuenta</ion-button>
+    </form>
+  </ion-card-content>
 </ion-content>

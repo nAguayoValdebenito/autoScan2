@@ -2,11 +2,11 @@
 <ion-content color="primary" class="ion-padding">
 
     <ion-card-content class="login-card-content login-container">
-      <form  (ngSubmit)="onSubmit()">
+      <form  (ngSubmit)="login()">
         <img src="assets/logo.png" alt="Logo" class="logo" />
         <ion-card-content>
-          <ion-input required label="Usuario" label-placement="floating" fill="outline" placeholder="Ingrese Usuario" name="usr" [(ngModel)]="usuario.usr" ></ion-input>
-          <ion-input type="password" required label="Contraseña" name="password" label-placement="floating" fill="outline" placeholder="Ingrese Contraseña" name="password" [(ngModel)]="usuario.password"></ion-input>
+          <ion-input required label="Email" label-placement="floating" fill="outline" placeholder="Ingrese email" name="email" [(ngModel)]="usr.email" ></ion-input>
+          <ion-input type="password" required label="Contraseña" name="password" label-placement="floating" fill="outline" placeholder="Ingrese Contraseña" name="password" [(ngModel)]="usr.password"></ion-input>
           <ion-button color="secondary" type="submit" expand="block">Ingresar</ion-button>
         </ion-card-content>
         <ion-button color="secondary" expand="full" fill="outline" routerLink="/recuperar">Recuperar Contraseña</ion-button>

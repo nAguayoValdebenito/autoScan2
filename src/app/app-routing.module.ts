@@ -62,6 +62,10 @@ const routes: Routes = [
     path: 'agregar-asignatura',
     loadChildren: () => import('./pages/agregar-asignatura/agregar-asignatura.module').then( m => m.AgregarAsignaturaPageModule)
   },
+  {
+    path: 'profesor',
+    loadChildren: () => import('./pages/profesor/profesor.module').then( m => m.ProfesorPageModule)
+  },
 
 ];
 

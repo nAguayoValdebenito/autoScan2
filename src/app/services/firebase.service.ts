@@ -1,22 +1,24 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
 
-  // Importar la autenticacion de angular en firebase
-  auth = Inject(AngularFireAuth);
+constructor(private AFAuth:AngularFireAuth, private router:Router,){
 
- // Funcion para acceder
+}
 
- signIn(){
-
-  // return signInWithEmailAndPassword(getAuth(),Register.email, Register.password)
-
- }
-
+login(email: string, password: string){
+return this.AFAuth.signInWithEmailAndPassword(email,password).then((result)=>{console.log('usuario logeado',result.user);
+this.router.navigateByUrl('/home');
+return result.user
+}).catch((e)=>{
+console.log('Error al iniciar sesion',e);
+throw e;
+})
+}
 
 }
