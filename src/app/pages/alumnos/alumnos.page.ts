@@ -20,7 +20,7 @@ export class AlumnosPage implements OnInit {
       etiqueta:'Porcentaje de Asistencia'
     },
     {
-      ruta:'/scaneo',
+      ruta:'/asistencia',
       icono:'qr-code-outline',
       etiqueta:'Scan codigo QR'
     }

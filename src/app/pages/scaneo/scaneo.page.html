@@ -1,40 +1,19 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Scan codigo QR</ion-title>
+  <ion-toolbar color="primary">
+    <img class="logo" slot="end" src="assets/logo.png" alt="Logo" />
+    <ion-title>Generador de QR Asistencia</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-button (click)="openModal()">
-    <ion-icon slot="start" name="camera-outline"></ion-icon>
-    Abrir Camara
-  </ion-button>
+<ion-content class="ion-padding ion-text-center" color="primary">
+  <!-- Botón para retroceder a la página anterior -->
+  <ion-button expand="full" color="secondary" (click)="goBack()">Volver</ion-button>
+
+  <!-- Botón para generar el QR automáticamente -->
+  <ion-button expand="full" (click)="generateQR()">Generar QR de Asistencia</ion-button>
+
+  <!-- Mostrar el código QR generado -->
+  <div *ngIf="qrCodeDataUrl">
+    <img [src]="qrCodeDataUrl" alt="QR Code de Asistencia" />
+  </div>
 </ion-content>
-
-<ion-modal [isOpen]="isModalOpen" (ionModalDidClose)="isModalOpen = false">
-  <ng-template>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Escanear QR</ion-title>
-        <ion-buttons slot="end">
-          <ion-button (click)="isModalOpen = false">
-            <ion-icon name="close"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
-    
-    <ion-content class="ion-padding">
-      <div class="camera-simulator">
-        <ion-icon class="scan-icon" color="secondary" name="qr-code-outline" ></ion-icon>
-        <div class="camera-overlay"></div>
-      </div>
-
-      <ion-button expand="full" class="capture-button" >
-        <ion-icon name="camera"></ion-icon> Capturar
-      </ion-button>
-    </ion-content>
-  </ng-template>
-</ion-modal>
-
-

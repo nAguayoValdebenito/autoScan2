@@ -9,6 +9,7 @@ import { AsistenciaPageRoutingModule } from './asistencia-routing.module';
 import { AsistenciaPage } from './asistencia.page';
 
 import { ComponentsModule } from 'src/app/components/components.module';
+import { QrCodeModule } from 'ng-qrcode';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ComponentsModule } from 'src/app/components/components.module';
     FormsModule,
     IonicModule,
     AsistenciaPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    QrCodeModule
 
 ],
   declarations: [AsistenciaPage]
